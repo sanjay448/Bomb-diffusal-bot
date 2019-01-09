@@ -1,0 +1,77 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div style=" height:400px; width:300px; float: left;">
+<center>
+<h1><span style="color:#5C5C5C;"></span><span style="color:#139442"> </span></h1>
+<h2></h2><br><br>
+<a href="#" id="up" style="font-size:30px;text-decoration:none;">  &#x1F881;&#x1F881;<br>Forward</a><br><br></center>
+<a href="#" id="left" style="font-size:30px;text-decoration:none;"> &#x1F880;&#x1F880;Left</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#" id="right" style="font-size:30px; text-decoration:none;"> Right &#x1F882;&#x1F882;</a><br><br>
+<center><a href="#" id="down" style="font-size:30px;text-decoration:none;"> Backward<br> &#x1F883;&#x1F883;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</center>
+</div>
+
+<div style=" float: right;">
+<form action = "/" method="POST">
+     <br>First:<br>
+     <input type="number" name="form1">
+     <input type="submit">
+</form>
+
+<form action = "/" method="POST">
+     <br>Second:<br>
+     <input type="number" name="form2">
+     <input type="submit">
+</form>
+
+<form action = "/" method="POST">
+     <br>Third:<br>
+     <input type="number" name="form3">
+     <input type="submit">
+</form>
+
+<form action = "/" method="POST">
+     <br>Fourth:<br>
+     <input type="number" name="form4">
+     <input type="submit">
+</form>
+</div>
+
+
+<script>
+$( document ).ready(function(){
+    $("#down").on("mousedown", function() {
+     $.get('/down_side');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#up").on("mousedown", function() {
+     $.get('/up_side');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#left").on("mousedown", function() {
+     $.get('/left_side');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+
+    $("#right").on("mousedown", function() {
+     $.get('/right_side');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#cut").on("mousedown", function() {
+     $.get('/lift');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+});
+</script>
+
+</body>
+</html>
